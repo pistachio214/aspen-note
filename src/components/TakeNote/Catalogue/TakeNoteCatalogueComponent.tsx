@@ -1,25 +1,42 @@
 import React, { useState } from "react";
-import TakeNoteCataLogueTitleComponent from "./TakeNoteCataLogueTitleComponent";
+import TakeNoteCatalogueTitleComponent from "./TakeNoteCatalogueTitleComponent.tsx";
 import { VscChevronRight, VscNewFolder, VscChevronDown } from "react-icons/vsc";
 
-import { TakeNoteCatalogueWapper } from "../style";
-import TakeNoteCataLogueItemComponent from "./TakeNoteCataLogueItemComponent";
+import { TakeNoteCatalogueWrapper } from "../style";
+import TakeNoteCatalogueItemComponent from "./TakeNoteCatalogueItemComponent.tsx";
+import TakeNoteCatalogueEditComponent from "./TakeNoteCatalogueEditComponent.tsx";
 
-const TakeNoteCataLogueComponent: React.FC = () => {
+const TakeNoteCatalogueComponent: React.FC = () => {
 
-    const cataItem = [
+    const [cataItem, setCataItem] = useState<string[]>([
         "", "", "", "", "", "", "", "", "", "", "", ""
+    ]);
 
-    ];
     const [triggerSubMenu, setTriggerSubMenu] = useState<boolean>(true);
+    const [addItem, setAddItem] = useState<boolean>(false);
 
     const triggerSubOnClick = () => {
         setTriggerSubMenu(!triggerSubMenu);
     }
 
+    const handleAddItem = () => {
+        setTriggerSubMenu(true);
+        setAddItem(true);
+    }
+
+    const onEditInputEnter = (value: string) => {
+        console.log('传递到前面来的值', value)
+
+        let temp = [...cataItem];
+        temp.push(value);
+        setCataItem(temp);
+
+        setAddItem(false);
+    }
+
     return (
-        <TakeNoteCatalogueWapper>
-            <TakeNoteCataLogueTitleComponent />
+        <TakeNoteCatalogueWrapper>
+            <TakeNoteCatalogueTitleComponent />
 
             <div className="catelogue-container">
                 <div className="container-wapper">
@@ -35,7 +52,7 @@ const TakeNoteCataLogueComponent: React.FC = () => {
                             <span>CATEGORIES</span>
                         </div>
 
-                        <div className="wapper new-folder-wapper"> <VscNewFolder className="vsc-new-folder" /> </div>
+                        <div className="wapper new-folder-wapper" onClick={handleAddItem}> <VscNewFolder className="vsc-new-folder" /> </div>
                     </div>
                 </div>
             </div>
@@ -44,7 +61,7 @@ const TakeNoteCataLogueComponent: React.FC = () => {
                 {
                     triggerSubMenu ?
                         cataItem.map((item: string, index: number) => {
-                            return <TakeNoteCataLogueItemComponent
+                            return <TakeNoteCatalogueItemComponent
                                 key={`${index}-${item}`}
                                 name={`${index + 1}-文件夹名称-${index}`}
                             />
@@ -52,10 +69,14 @@ const TakeNoteCataLogueComponent: React.FC = () => {
                         :
                         <></>
                 }
-                <>New Catelogue</>
+
+                {
+                    addItem ? <TakeNoteCatalogueEditComponent onEnter={onEditInputEnter} /> : <></>
+                }
+
             </div>
-        </TakeNoteCatalogueWapper>
+        </TakeNoteCatalogueWrapper>
     );
 }
 
-export default TakeNoteCataLogueComponent;
+export default TakeNoteCatalogueComponent;

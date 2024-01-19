@@ -1,11 +1,11 @@
 import React from "react";
-import { TakeNoteContentWapper } from "../style";
+import { TakeNoteContentWrapper } from "../style";
 
 const TakeNoteContentComponent: React.FC = () => {
     return (
-        <TakeNoteContentWapper>
+        <TakeNoteContentWrapper>
             TakeNote Content
-        </TakeNoteContentWapper>
+        </TakeNoteContentWrapper>
     );
 }
 

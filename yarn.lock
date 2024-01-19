@@ -372,6 +372,18 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@right-menu/core@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.npmmirror.com/@right-menu/core/-/core-0.0.7.tgz#65a731cc48b15b782d527e9a19d803c3281bb89b"
+  integrity sha512-DMqdTOfFflBWrBcmsq4oP+vDn47d4YopjOALVxSpt/KJdV0TYwsGiIXMPomd46eHjTHJS7NDDsfajPastgPR7w==
+
+"@right-menu/react@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.npmmirror.com/@right-menu/react/-/react-0.0.5.tgz#be6f60320188b440ceee16cb3c47aae0a066dc69"
+  integrity sha512-x56/leWtW+cQhMNwEFxOTnhlGgCETzx4RWrnMq6Be7Bll/kcdzfprozoNUEDcTM1HykcSwxeSxIDuV/KwrzVsQ==
+  dependencies:
+    "@right-menu/core" "^0.0.7"
+
 "@rollup/rollup-android-arm-eabi@4.9.5":
   version "4.9.5"
   resolved "https://registry.npmmirror.com/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.9.5.tgz#b752b6c88a14ccfcbdf3f48c577ccc3a7f0e66b9"

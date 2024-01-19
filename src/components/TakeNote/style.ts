@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const TakeNoteWapper = styled.div`
+export const TakeNoteWrapper = styled.div`
     display: flex;
     flex-direction: row;
     height: 100%;
 `
 
-export const TakeNoteCatalogueWapper = styled.div`
+export const TakeNoteCatalogueWrapper = styled.div`
     height: 100%;
     width: 240px;
 
@@ -87,7 +87,7 @@ export const TakeNoteCatalogueWapper = styled.div`
     }
 `
 
-export const TakeNoteCatalogueTitleWapper = styled.div`
+export const TakeNoteCatalogueTitleWrapper = styled.div`
     width: 100%;
     margin: 0.5rem 0%;
     padding-top: 1rem;
@@ -98,7 +98,7 @@ export const TakeNoteCatalogueTitleWapper = styled.div`
     
 `
 
-export const TakeNoteCataLogueItemWapper = styled.div`
+export const TakeNoteCatalogueItemWrapper = styled.div`
     padding: 0 0.5rem;
     height: 35px;
 
@@ -146,7 +146,63 @@ export const TakeNoteCataLogueItemWapper = styled.div`
 
 `
 
-export const TakeNoteMenuWapper = styled.div`
+export const TakeNoteCatalogueEditInputWrapper = styled.div`
+    padding: 0 0.5rem;
+    height: 35px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+
+    .item-icon-title-wapper {
+        height: 35px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 10px;
+
+        .item-input {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+
+            input {
+                padding: 0;
+                height: 25px;
+                width: 80%;
+                padding-right: 10px;
+                border-radius: 0;
+                background-color: wheat;
+            }
+        }
+    }
+
+    .item-icon {
+        height: 35px;
+        display: flex;
+        align-items: center;
+    }
+
+    .outline {
+        display: none;
+    }
+
+    &:hover {
+        background: #202020;
+        color: white;
+
+        .outline {
+            display: block;
+            height: 35px;
+            display: flex;
+            align-items: center;
+        }
+    }
+`
+
+export const TakeNoteMenuWrapper = styled.div`
     height: 100%;
     width: 330px;
 
@@ -154,7 +210,7 @@ export const TakeNoteMenuWapper = styled.div`
     border-right: 1px solid #cccccc;
 `
 
-export const TakeNoteContentWapper = styled.div`
+export const TakeNoteContentWrapper = styled.div`
     flex: 1;
     height: 100%;
 
