@@ -1,6 +1,7 @@
 import React from "react";
-import { TakeNoteMenuItemWrapper } from "../style";
 import { BiCalendar } from "react-icons/bi";
+
+import { TakeNoteMenuItemWrapper } from "@/components/TakeNote/style";
 
 const TakeNoteMenuItemComponent: React.FC = () => {
     return (

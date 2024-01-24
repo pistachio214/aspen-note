@@ -115,7 +115,6 @@ export const TakeNoteCatalogueItemWrapper = styled.div`
     flex-shrink: 0;
     cursor: default;
 
-
     .item-icon-title-wapper {
         height: 35px;
         display: flex;
@@ -197,6 +196,7 @@ export const TakeNoteCatalogueEditInputWrapper = styled.div`
                 border-right: none;
                 box-shadow: none;
                 border-bottom: 1px solid white;
+                outline: none;
             }
         }
     }
@@ -241,17 +241,32 @@ export const TakeNoteSearchWrapper = styled.div`
     -moz-user-select: none;
 
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
 
     border-bottom: 1px solid #d1d1d1;
 
+    .dock-wrapper {
+        width: 40px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .dock-icon {
+            font-size: 26px;
+            color: #2d2d2d;
+        }
+    }
+
     .search-input {
         padding: 0 1rem;
-        height: 40px;
-        width: 250px;
+        height: 30px;
+        width: 200px;
         font-size: 14px;
+        outline: none;
     }
 `
 
@@ -278,6 +293,7 @@ export const TakeNoteMenuItemWrapper = styled.div`
         .title {
             padding: 10px 15px 0 15px;
             font-weight: 500;
+            cursor: default;
         }
 
         .updated-at {
@@ -286,6 +302,7 @@ export const TakeNoteMenuItemWrapper = styled.div`
             display: flex;
             flex-direction: row;
             align-items: center;
+            cursor: default;
             
             .icon {
                 margin-right: 5px;
@@ -296,8 +313,14 @@ export const TakeNoteMenuItemWrapper = styled.div`
 
 export const TakeNoteContentWrapper = styled.div`
     flex: 1;
-    height: 100%;
+    /* height: 100%; */
+    overflow-y: auto; /* 设置垂直滚动条 */
 
     background-color: #fafafa;
+    padding: 20px 40px 10px 40px;
+
+    .preview-wrapper {
+        /* border: 1px solid red; */
+    }
 
 `

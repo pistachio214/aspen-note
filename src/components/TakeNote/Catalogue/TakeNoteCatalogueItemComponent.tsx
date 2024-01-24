@@ -1,13 +1,17 @@
-import React from "react"
+import React from "react";
 
-import { AiOutlineFolder } from "react-icons/ai";
-import RightMenu from '@right-menu/react'
+import {
+    AiOutlineFolder,
+    // AiOutlineEllipsis
+} from "react-icons/ai";
+
+import RightMenu from '@right-menu/react';
 import { OptionsType } from '@right-menu/core';
 
-import { TakeNoteCatalogueItemWrapper } from "../style";
-import { TakeNoteCataLogueItemProps } from "../props";
+import { TakeNoteCatalogueItemWrapper } from "@/components/TakeNote/style";
+import { TakeNoteCataLogueItemProps as IProps } from "@/components/TakeNote/props";
 
-const TakeNoteCatalogueItemComponent: React.FC<TakeNoteCataLogueItemProps> = (props: TakeNoteCataLogueItemProps) => {
+const TakeNoteCatalogueItemComponent: React.FC<IProps> = (props: IProps) => {
 
     const options: OptionsType = [
         {
@@ -17,28 +21,34 @@ const TakeNoteCatalogueItemComponent: React.FC<TakeNoteCataLogueItemProps> = (pr
         },
         {
             type: 'li',
-            text: '删除',
+            text: `<div style="color: red;">删除</div>`,
             callback: () => alert('Hello RightMenu'),
         },
     ];
 
+    const handleCatalogue = () => {
+        console.log('点击了一级菜单')
+    }
+
     return (
-        <TakeNoteCatalogueItemWrapper>
-            <RightMenu
-                minWidth={100}
-                maxWidth={200}
-                onBeforeInit={() => { }}
-                onAfterInit={() => { }}
-                theme="mac"
-                options={options}
-            >
+        <RightMenu
+            minWidth={70}
+            maxWidth={200}
+            onBeforeInit={() => { }}
+            onAfterInit={() => { }}
+            theme="mac"
+            options={options}
+        >
+            <TakeNoteCatalogueItemWrapper onClick={handleCatalogue}>
                 <div className="item-icon-title-wapper">
                     <div className="item-icon"><AiOutlineFolder /></div>
                     <div className="item-title">{props.name}</div>
                 </div>
-            </RightMenu>
-            
-        </TakeNoteCatalogueItemWrapper >
+                {/* <div className="item-icon outline">
+                    <AiOutlineEllipsis />
+                </div> */}
+            </TakeNoteCatalogueItemWrapper>
+        </RightMenu>
     )
 }
 

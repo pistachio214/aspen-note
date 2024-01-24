@@ -1,5 +1,5 @@
 import React from "react";
-import { TakeNoteCatalogueTitleWrapper } from "../style";
+import { TakeNoteCatalogueTitleWrapper } from "@/components/TakeNote/style";
 
 const TakeNoteCatalogueTitleComponent: React.FC = () => {
     return (

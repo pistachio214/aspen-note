@@ -1,15 +1,22 @@
 import React, { useState } from "react";
-import TakeNoteCatalogueTitleComponent from "./TakeNoteCatalogueTitleComponent.tsx";
+import { shallowEqual } from "react-redux";
 import { VscChevronRight, VscNewFolder, VscChevronDown } from "react-icons/vsc";
 
-import { TakeNoteCatalogueWrapper } from "../style";
-import TakeNoteCatalogueItemComponent from "./TakeNoteCatalogueItemComponent.tsx";
-import TakeNoteCatalogueEditComponent from "./TakeNoteCatalogueEditComponent.tsx";
+import TakeNoteCatalogueTitleComponent from "@/components/TakeNote/Catalogue/TakeNoteCatalogueTitleComponent";
+import TakeNoteCatalogueItemComponent from "@/components/TakeNote/Catalogue/TakeNoteCatalogueItemComponent";
+import TakeNoteCatalogueEditComponent from "@/components/TakeNote/Catalogue/TakeNoteCatalogueEditComponent";
+import { RootState } from '@/redux/store';
+import { SidebarState } from "@/redux/types/sidebar";
+import { useAppSelector } from "@/redux/hook";
+
+import { TakeNoteCatalogueWrapper } from "@/components/TakeNote/style";
 
 const TakeNoteCatalogueComponent: React.FC = () => {
 
+    const sidebarState: SidebarState = useAppSelector((state: RootState) => ({ ...state.sidebar }), shallowEqual);
+
     const [cataItem, setCataItem] = useState<string[]>([
-        "", "", "", "", "", "", "", "", "", "", "", ""
+        "技术贴", "dog bone", "必备软件", "Poe路由器", "四联优侍", "健科公司文档", "如小意"
     ]);
 
     const [triggerSubMenu, setTriggerSubMenu] = useState<boolean>(true);
@@ -25,58 +32,69 @@ const TakeNoteCatalogueComponent: React.FC = () => {
     }
 
     const onEditInputEnter = (value: string) => {
-        console.log('传递到前面来的值', value)
-
         let temp = [...cataItem];
         temp.push(value);
         setCataItem(temp);
 
+        clearAddInput();
+    }
+
+    const clearAddInput = () => {
         setAddItem(false);
     }
 
-    return (
-        <TakeNoteCatalogueWrapper>
-            <TakeNoteCatalogueTitleComponent />
+    return sidebarState.firstSidebar ?
+        (
+            <TakeNoteCatalogueWrapper>
+                <TakeNoteCatalogueTitleComponent />
 
-            <div className="catelogue-container">
-                <div className="container-wapper">
-                    <div className="title-container">
-                        <div className="wapper title-wapper" onClick={triggerSubOnClick}>
-                            {
-                                triggerSubMenu ?
-                                    <VscChevronDown className="vsc-chevron-right" />
-                                    :
-                                    <VscChevronRight className="vsc-chevron-right" />
+                <div className="catelogue-container">
+                    <div className="container-wapper">
+                        <div className="title-container">
+                            <div className="wapper title-wapper" onClick={triggerSubOnClick}>
+                                {
+                                    triggerSubMenu ?
+                                        <VscChevronDown className="vsc-chevron-right" />
+                                        :
+                                        <VscChevronRight className="vsc-chevron-right" />
 
-                            }
-                            <span>CATEGORIES</span>
+                                }
+                                <span>CATEGORIES</span>
+                            </div>
+
+                            <div className="wapper new-folder-wapper" onClick={handleAddItem}> <VscNewFolder className="vsc-new-folder" /> </div>
                         </div>
-
-                        <div className="wapper new-folder-wapper" onClick={handleAddItem}> <VscNewFolder className="vsc-new-folder" /> </div>
                     </div>
                 </div>
-            </div>
 
-            <div className="catelogue-item-container">
-                {
-                    triggerSubMenu ?
-                        cataItem.map((item: string, index: number) => {
-                            return <TakeNoteCatalogueItemComponent
-                                key={`${index}-${item}`}
-                                name={`${index + 1}-文件夹名称-${index}`}
+                <div className="catelogue-item-container">
+                    {
+                        triggerSubMenu ?
+                            cataItem.map((item: string, index: number) => {
+                                return <TakeNoteCatalogueItemComponent
+                                    key={`${index}-${item}`}
+                                    name={`${item}`}
+                                />
+                            })
+                            :
+                            <></>
+                    }
+
+                    {
+                        addItem ?
+                            <TakeNoteCatalogueEditComponent
+                                onEnter={onEditInputEnter}
+                                onClear={clearAddInput}
                             />
-                        })
-                        :
-                        <></>
-                }
+                            :
+                            <></>
+                    }
 
-                {
-                    addItem ? <TakeNoteCatalogueEditComponent onEnter={onEditInputEnter} /> : <></>
-                }
-
-            </div>
-        </TakeNoteCatalogueWrapper>
-    );
+                </div>
+            </TakeNoteCatalogueWrapper>
+        )
+        :
+        <></>;
 }
 
 export default TakeNoteCatalogueComponent;

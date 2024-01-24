@@ -1,22 +1,30 @@
-import React, { KeyboardEvent, useState } from "react";
+import React, { KeyboardEvent, useState, FocusEvent } from "react";
 import { AiOutlineFolder } from "react-icons/ai";
 
-import { TakeNoteCatalogueEditInputWrapper } from "../style";
-import { TakeNoteCatalogueEditProps } from "../props";
+import { TakeNoteCatalogueEditInputWrapper } from "@/components/TakeNote/style";
+import { TakeNoteCatalogueEditProps as IProps } from "@/components/TakeNote/props";
 
-const TakeNoteCatalogueEditComponent: React.FC<TakeNoteCatalogueEditProps> = (props: TakeNoteCatalogueEditProps) => {
+const TakeNoteCatalogueEditComponent: React.FC<IProps> = (props: IProps) => {
 
     const [value, setValue] = useState<string>('');
 
     const onKeyUp = (e: KeyboardEvent) => {
         if (e.key == "Enter") {
             if (value != undefined && value != null && value != '') {
-                console.log("使用了回车健,值为 input value = ", value);
                 props.onEnter(value);
-
-                setValue('');
             }
+            setValue('');
         }
+    }
+
+    const onBlur = (e: FocusEvent) => {
+        if (value != undefined && value != null && value != '') {
+            console.log("使用了回车健,值为 input value = ", value);
+            props.onEnter(value);
+        } else {
+            props.onClear();
+        }
+        setValue('');
     }
 
     return (
@@ -29,6 +37,7 @@ const TakeNoteCatalogueEditComponent: React.FC<TakeNoteCatalogueEditProps> = (pr
                         value={value}
                         onChange={(e) => setValue(e.target.value)}
                         onKeyUp={onKeyUp}
+                        onBlur={onBlur}
                         placeholder="please input title"
                     />
                 </div>

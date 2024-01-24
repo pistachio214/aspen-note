@@ -1,10 +1,13 @@
-import React from "react"
-import { TakeNoteWrapper } from "./style"
-import TakeNoteCatalogueComponent from "./Catalogue/TakeNoteCatalogueComponent";
-import TakeNoteMenuComponent from "./Menu/TakeNoteMenuComponent"
-import TakeNoteContentComponent from "./Content/TakeNoteContentComponent"
+import React from "react";
+
+import TakeNoteCatalogueComponent from "@/components/TakeNote/Catalogue/TakeNoteCatalogueComponent";
+import TakeNoteMenuComponent from "@/components/TakeNote/Menu/TakeNoteMenuComponent";
+import TakeNoteContentComponent from "@/components/TakeNote/Content/TakeNoteContentComponent";
+
+import { TakeNoteWrapper } from "@/components/TakeNote/style";
 
 const TakeNoteComponent: React.FC = () => {
+
     return (
         <TakeNoteWrapper>
             <TakeNoteCatalogueComponent />

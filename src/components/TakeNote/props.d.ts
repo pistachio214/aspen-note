@@ -4,6 +4,7 @@ interface TakeNoteCataLogueItemProps {
 
 interface TakeNoteCatalogueEditProps {
     onEnter: (value: string) => void
+    onClear: () => void
 }
 
 export type {

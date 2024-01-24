@@ -1,7 +1,9 @@
 import React from "react"
-import { TakeNoteMenuWrapper } from "../style";
-import TakeNoteSearchComponent from "./TakeNoteSearchComponent";
-import TakeNoteMenuItemComponent from "./TakeNoteMenuItemComponent";
+
+import TakeNoteSearchComponent from "@/components/TakeNote/Menu/TakeNoteSearchComponent";
+import TakeNoteMenuItemComponent from "@/components/TakeNote/Menu/TakeNoteMenuItemComponent";
+
+import { TakeNoteMenuWrapper } from "@/components/TakeNote/style";
 
 const TakeNoteMenuComponent: React.FC = () => {
     return (
