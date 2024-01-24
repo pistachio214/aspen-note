@@ -1,6 +1,6 @@
 import React from "react";
 import { TakeNoteMenuItemWrapper } from "../style";
-import { VscHistory } from "react-icons/vsc";
+import { BiCalendar } from "react-icons/bi";
 
 const TakeNoteMenuItemComponent: React.FC = () => {
     return (
@@ -10,7 +10,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -20,7 +20,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -30,7 +30,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div><div className="item">
@@ -38,7 +38,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -48,7 +48,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -58,7 +58,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -68,7 +68,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -78,7 +78,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -88,7 +88,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -98,7 +98,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -108,7 +108,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -118,7 +118,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -128,7 +128,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -138,7 +138,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -148,7 +148,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -159,7 +159,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -169,7 +169,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -179,7 +179,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -189,7 +189,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -199,7 +199,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
@@ -209,7 +209,7 @@ const TakeNoteMenuItemComponent: React.FC = () => {
                     Welcome to Takenote!
                 </div>
                 <div className="updated-at">
-                    <VscHistory className="icon" />
+                    <BiCalendar className="icon" />
                     2023-12-12 12:12:12
                 </div>
             </div>
