@@ -29,6 +29,7 @@ const TakeNoteCatalogueEditComponent: React.FC<TakeNoteCatalogueEditProps> = (pr
                         value={value}
                         onChange={(e) => setValue(e.target.value)}
                         onKeyUp={onKeyUp}
+                        placeholder="please input title"
                     />
                 </div>
             </div>

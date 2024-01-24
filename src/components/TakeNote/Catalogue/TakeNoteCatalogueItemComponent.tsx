@@ -29,7 +29,7 @@ const TakeNoteCatalogueItemComponent: React.FC<TakeNoteCataLogueItemProps> = (pr
                 maxWidth={200}
                 onBeforeInit={() => { }}
                 onAfterInit={() => { }}
-                theme="win10"
+                theme="mac"
                 options={options}
             >
                 <div className="item-icon-title-wapper">
