@@ -2,6 +2,8 @@ body {
   margin: 0;
   overscroll-behavior: none;
   height: 100vh;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 #root {
@@ -60,6 +62,11 @@ button:hover {
 button:active {
   /* border-color: #396cd8; */
   background-color: #e8e8e8;
+}
+
+.catalogue-item-active {
+  background: #202020;
+  color: white;
 }
 
 /* @media (prefers-color-scheme: dark) {

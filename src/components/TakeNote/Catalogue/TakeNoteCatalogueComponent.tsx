@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { shallowEqual } from "react-redux";
 import { VscChevronRight, VscNewFolder, VscChevronDown } from "react-icons/vsc";
+import { v4 as uuidv4 } from "uuid";
 
 import TakeNoteCatalogueTitleComponent from "@/components/TakeNote/Catalogue/TakeNoteCatalogueTitleComponent";
 import TakeNoteCatalogueItemComponent from "@/components/TakeNote/Catalogue/TakeNoteCatalogueItemComponent";
@@ -10,13 +11,48 @@ import { SidebarState } from "@/redux/types/sidebar";
 import { useAppSelector } from "@/redux/hook";
 
 import { TakeNoteCatalogueWrapper } from "@/components/TakeNote/style";
+import { TakeNoteCatalogueMenu } from "@/components/TakeNote/type";
 
 const TakeNoteCatalogueComponent: React.FC = () => {
 
     const sidebarState: SidebarState = useAppSelector((state: RootState) => ({ ...state.sidebar }), shallowEqual);
 
-    const [cataItem, setCataItem] = useState<string[]>([
-        "技术贴", "dog bone", "必备软件", "Poe路由器", "四联优侍", "健科公司文档", "如小意"
+    const [cataItem, setCataItem] = useState<TakeNoteCatalogueMenu[]>([
+        {
+            uuid: uuidv4(),
+            title: "技术贴",
+
+        },
+        {
+            uuid: uuidv4(),
+            title: "dog bone",
+
+        },
+        {
+            uuid: uuidv4(),
+            title: "必备软件",
+
+        },
+        {
+            uuid: uuidv4(),
+            title: "Poe路由器",
+
+        },
+        {
+            uuid: uuidv4(),
+            title: "四联优侍",
+
+        },
+        {
+            uuid: uuidv4(),
+            title: "健科公司文档",
+
+        },
+        {
+            uuid: uuidv4(),
+            title: "如小意",
+
+        },
     ]);
 
     const [triggerSubMenu, setTriggerSubMenu] = useState<boolean>(true);
@@ -33,7 +69,10 @@ const TakeNoteCatalogueComponent: React.FC = () => {
 
     const onEditInputEnter = (value: string) => {
         let temp = [...cataItem];
-        temp.push(value);
+        temp.push({
+            title: value,
+            uuid: uuidv4()
+        });
         setCataItem(temp);
 
         clearAddInput();
@@ -70,10 +109,11 @@ const TakeNoteCatalogueComponent: React.FC = () => {
                 <div className="catelogue-item-container">
                     {
                         triggerSubMenu ?
-                            cataItem.map((item: string, index: number) => {
+                            cataItem.map((item: TakeNoteCatalogueMenu, index: number) => {
                                 return <TakeNoteCatalogueItemComponent
-                                    key={`${index}-${item}`}
-                                    name={`${item}`}
+                                    key={`${index}-${item.uuid}`}
+                                    uuid={item.uuid}
+                                    name={`${item.title}`}
                                 />
                             })
                             :

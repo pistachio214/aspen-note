@@ -1,8 +1,8 @@
 interface SidebarState {
     firstSidebar: boolean
     secondSidebar: boolean
-    firstSidebarKey?: number
-    secondSidebarKey?: number
+    firstSidebarKey?: string
+    secondSidebarKey?: string
 }
 
 export type {

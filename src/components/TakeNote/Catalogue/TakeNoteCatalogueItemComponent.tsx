@@ -4,14 +4,25 @@ import {
     AiOutlineFolder,
     // AiOutlineEllipsis
 } from "react-icons/ai";
+import { shallowEqual } from "react-redux";
 
 import RightMenu from '@right-menu/react';
 import { OptionsType } from '@right-menu/core';
 
+import { SidebarState } from "@/redux/types/sidebar";
+import { useAppSelector, useAppDispatch } from "@/redux/hook";
+import { RootState } from "@/redux/store";
+import { setFirstSidebarKey } from "@/redux/slice/sidebar";
+
+
 import { TakeNoteCatalogueItemWrapper } from "@/components/TakeNote/style";
-import { TakeNoteCataLogueItemProps as IProps } from "@/components/TakeNote/props";
+import { TakeNoteCataLogueItemProps as IProps } from "@/components/TakeNote/type";
+
 
 const TakeNoteCatalogueItemComponent: React.FC<IProps> = (props: IProps) => {
+
+    const dispatch = useAppDispatch();
+    const sidebarState: SidebarState = useAppSelector((state: RootState) => ({ ...state.sidebar }), shallowEqual);
 
     const options: OptionsType = [
         {
@@ -27,7 +38,7 @@ const TakeNoteCatalogueItemComponent: React.FC<IProps> = (props: IProps) => {
     ];
 
     const handleCatalogue = () => {
-        console.log('点击了一级菜单')
+        dispatch(setFirstSidebarKey(props.uuid));
     }
 
     return (
@@ -39,14 +50,14 @@ const TakeNoteCatalogueItemComponent: React.FC<IProps> = (props: IProps) => {
             theme="mac"
             options={options}
         >
-            <TakeNoteCatalogueItemWrapper onClick={handleCatalogue}>
+            <TakeNoteCatalogueItemWrapper onClick={handleCatalogue} className={sidebarState.firstSidebarKey == props.uuid ? 'catalogue-item-active' : ''}>
                 <div className="item-icon-title-wapper">
                     <div className="item-icon"><AiOutlineFolder /></div>
                     <div className="item-title">{props.name}</div>
                 </div>
                 {/* <div className="item-icon outline">
-                    <AiOutlineEllipsis />
-                </div> */}
+                <AiOutlineEllipsis />
+            </div> */}
             </TakeNoteCatalogueItemWrapper>
         </RightMenu>
     )

@@ -1,6 +1,6 @@
 import {
     createSlice,
-    // PayloadAction 
+    PayloadAction
 } from "@reduxjs/toolkit";
 import { SidebarState } from "../types/sidebar";
 
@@ -34,10 +34,21 @@ export const sidebarSlice = createSlice({
                 secondSidebar: false,
             };
         },
+        setFirstSidebarKey: (state: SidebarState, action: PayloadAction<string>) => {
+            state.firstSidebarKey = action.payload;
+        },
     },
 });
 
-export const { openFirst, closeFirst, openSecond, closeSecond, openAll, closeAll } = sidebarSlice.actions;
+export const {
+    openFirst,
+    closeFirst,
+    openSecond,
+    closeSecond,
+    openAll,
+    closeAll,
+    setFirstSidebarKey
+} = sidebarSlice.actions;
 export default sidebarSlice.reducer;
 
 

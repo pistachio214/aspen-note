@@ -143,6 +143,7 @@ export const TakeNoteCatalogueItemWrapper = styled.div`
         display: none;
     }
 
+
     &:hover {
         background: #3a3a3a;
         color: white;
@@ -292,8 +293,11 @@ export const TakeNoteMenuItemWrapper = styled.div`
 
         .title {
             padding: 10px 15px 0 15px;
-            font-weight: 500;
+            font-size: 14px;
+            font-weight: 400;
             cursor: default;
+            overflow: hidden;
+            height: 20px;
         }
 
         .updated-at {

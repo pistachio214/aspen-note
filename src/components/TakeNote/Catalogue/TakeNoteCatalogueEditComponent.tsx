@@ -2,7 +2,7 @@ import React, { KeyboardEvent, useState, FocusEvent } from "react";
 import { AiOutlineFolder } from "react-icons/ai";
 
 import { TakeNoteCatalogueEditInputWrapper } from "@/components/TakeNote/style";
-import { TakeNoteCatalogueEditProps as IProps } from "@/components/TakeNote/props";
+import { TakeNoteCatalogueEditProps as IProps } from "@/components/TakeNote/type";
 
 const TakeNoteCatalogueEditComponent: React.FC<IProps> = (props: IProps) => {
 
@@ -19,7 +19,6 @@ const TakeNoteCatalogueEditComponent: React.FC<IProps> = (props: IProps) => {
 
     const onBlur = (e: FocusEvent) => {
         if (value != undefined && value != null && value != '') {
-            console.log("使用了回车健,值为 input value = ", value);
             props.onEnter(value);
         } else {
             props.onClear();
