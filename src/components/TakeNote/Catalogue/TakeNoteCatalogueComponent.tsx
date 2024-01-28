@@ -117,7 +117,7 @@ const TakeNoteCatalogueComponent: React.FC = () => {
                                 />
                             })
                             :
-                            <></>
+                            null
                     }
 
                     {
@@ -127,14 +127,14 @@ const TakeNoteCatalogueComponent: React.FC = () => {
                                 onClear={clearAddInput}
                             />
                             :
-                            <></>
+                            null
                     }
 
                 </div>
             </TakeNoteCatalogueWrapper>
         )
         :
-        <></>;
+        null;
 }
 
 export default TakeNoteCatalogueComponent;

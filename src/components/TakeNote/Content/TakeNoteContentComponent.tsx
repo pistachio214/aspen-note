@@ -1,17 +1,31 @@
 import React, { useState, useEffect, useRef } from "react";
+import { shallowEqual } from "react-redux";
+
 import MarkdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
 import hljs from 'highlight.js';
 // import 'highlight.js/styles/atom-one-light.css';
 import 'highlight.js/styles/intellij-light.min.css';
 
+import { VscSync, VscTrash } from "react-icons/vsc";
+import { TiEdit, TiEye, TiChevronLeft, TiChevronRight } from "react-icons/ti";
+
 // 导入编辑器的样式
 import 'react-markdown-editor-lite/lib/index.css';
 import HtmlRender from 'react-markdown-editor-lite/cjs/editor/preview';
 
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { SidebarState } from "@/redux/types/sidebar";
+import { RootState } from "@/redux/store";
+import { closeSecond, openSecond } from "@/redux/slice/sidebar";
+
 import { TakeNoteContentWrapper } from "@/components/TakeNote/style";
 
 const TakeNoteContentComponent: React.FC = () => {
+
+    const dispatch = useAppDispatch();
+
+    const sidebarState: SidebarState = useAppSelector((state: RootState) => ({ ...state.sidebar }), shallowEqual);
 
     const editorRef = useRef<MdEditor>(null);
 
@@ -42,9 +56,21 @@ const TakeNoteContentComponent: React.FC = () => {
         console.log('handleEditorChange', data.html, data.text);
     }
 
-    // const onClickEdit = () => {
-    //     setType(1);
-    // }
+    const handleEdit = () => {
+        setType(2);
+    }
+
+    const handleShow = () => {
+        setType(1);
+    }
+
+    const recycleMenu = () => {
+        dispatch(closeSecond());
+    }
+
+    const openMenu = () => {
+        dispatch(openSecond());
+    }
 
     const renderHTML = (text: string) => {
         // 模拟异步渲染Markdown
@@ -54,22 +80,64 @@ const TakeNoteContentComponent: React.FC = () => {
 
     return (
         <TakeNoteContentWrapper>
-            {
-                type == 1 ?
-                    <HtmlRender className="preview-wrapper" html={mdParser.render(content)} />
-                    :
-                    <MdEditor
-                        ref={editorRef}
-                        style={{ height: '100%', border: '1px solid red' }}
-                        renderHTML={(text: string) => renderHTML(text)}
-                        config={{
-                            view: { menu: true, md: true, html: true },
-                            canView: { menu: true, md: true, html: true, fullScreen: true, hideMenu: true, both: true }
-                        }}
-                        onChange={handleEditorChange}
-                        placeholder={'输入您的内容！'}
-                    />
-            }
+            <div className="content-wrapper">
+                {
+                    type == 1 ?
+                        <HtmlRender className="preview-wrapper" html={mdParser.render(content)} />
+                        :
+                        <MdEditor
+                            ref={editorRef}
+                            style={{ height: '100%', padding: '0 0 40px 0' }}
+                            renderHTML={(text: string) => renderHTML(text)}
+                            config={{
+                                view: { menu: true, md: true, html: true },
+                                canView: { menu: true, md: true, html: true, fullScreen: true, hideMenu: true, both: true }
+                            }}
+                            onChange={handleEditorChange}
+                            placeholder={'输入您的内容！'}
+                        />
+                }
+            </div>
+
+            {/* fixed safari浏览器中 fixed布局造成的width不自适应的问题 (https://www.cnblogs.com/savokiss/p/9486240.html) */}
+            <div style={{ width: '100%', overflow: 'hidden', position: 'relative' }}>
+                <div className="footer-wrapper">
+                    <div className="fotter-tool-wrapper">
+                        {
+                            sidebarState.secondSidebar ? (
+                                <div className="tool-wrapper" onClick={recycleMenu}>
+                                    <TiChevronLeft className="tool-icon" />
+                                </div>
+                            ) : (
+                                <div className="tool-wrapper" onClick={openMenu}>
+                                    <TiChevronRight className="tool-icon" />
+                                </div>
+                            )
+                        }
+
+                        {
+                            type == 1 ? (
+                                <div className="tool-wrapper" onClick={handleEdit}>
+                                    <TiEdit className="tool-icon" />
+                                </div>
+                            ) : (
+                                <div className="tool-wrapper" onClick={handleShow}>
+                                    <TiEye className="tool-icon" />
+                                </div>
+                            )
+                        }
+
+                        <div className="tool-wrapper">
+                            <VscTrash className="tool-icon" />
+                        </div>
+
+                        <div className="tool-wrapper">
+                            <VscSync className="tool-icon" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 
         </TakeNoteContentWrapper>
     );

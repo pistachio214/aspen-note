@@ -317,14 +317,53 @@ export const TakeNoteMenuItemWrapper = styled.div`
 
 export const TakeNoteContentWrapper = styled.div`
     flex: 1;
-    /* height: 100%; */
     overflow-y: auto; /* 设置垂直滚动条 */
-
     background-color: #fafafa;
-    padding: 20px 40px 10px 40px;
+
+    .content-wrapper {
+        
+    }
 
     .preview-wrapper {
-        /* border: 1px solid red; */
+        padding: 20px 40px 40px 40px;
+    }
+
+    .footer-wrapper {
+        position: fixed;
+        bottom: 0;
+        z-index: 999;
+        width: 100vw;
+        height: 40px;
+        border-top: 1px solid #d8d8d8;
+        background-color: #e5e5e5;
+
+        .fotter-tool-wrapper {
+            width: 100vw;
+            height: 100%;
+            margin-left: 1rem;
+
+            display: flex;
+            flex-direction: row;
+            column-gap: 5px;
+
+            .tool-wrapper {
+                width: 40px;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #d8d8d8;
+                    color: #404040;
+                }
+
+                .tool-icon {
+                    font-size: 1rem;
+                }
+            }
+        }
     }
 
 `
