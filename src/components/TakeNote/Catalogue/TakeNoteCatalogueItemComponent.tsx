@@ -2,7 +2,7 @@ import React from "react";
 
 import {
     AiOutlineFolder,
-    // AiOutlineEllipsis
+    AiOutlineFolderOpen
 } from "react-icons/ai";
 import { shallowEqual } from "react-redux";
 
@@ -52,12 +52,17 @@ const TakeNoteCatalogueItemComponent: React.FC<IProps> = (props: IProps) => {
         >
             <TakeNoteCatalogueItemWrapper onClick={handleCatalogue} className={sidebarState.firstSidebarKey == props.uuid ? 'catalogue-item-active' : ''}>
                 <div className="item-icon-title-wapper">
-                    <div className="item-icon"><AiOutlineFolder /></div>
+                    <div className="item-icon">
+                        {
+                            sidebarState.firstSidebarKey == props.uuid ? (
+                                <AiOutlineFolderOpen />
+                            ) : (
+                                <AiOutlineFolder />
+                            )
+                        }
+                    </div>
                     <div className="item-title">{props.name}</div>
                 </div>
-                {/* <div className="item-icon outline">
-                <AiOutlineEllipsis />
-            </div> */}
             </TakeNoteCatalogueItemWrapper>
         </RightMenu>
     )

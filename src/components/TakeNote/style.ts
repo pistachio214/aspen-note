@@ -28,6 +28,10 @@ export const TakeNoteCatalogueWrapper = styled.div`
         &:hover {
             background: #3a3a3a;
             color: white;
+
+            .vsc-chevron-right {
+                color: #FFFFFF;
+            }
         }
 
         .setting-icon,.setting-title {
@@ -41,6 +45,11 @@ export const TakeNoteCatalogueWrapper = styled.div`
             user-select: none;
             -webkit-user-select: none;
             -moz-user-select: none;
+        }
+
+        .setting-icon {
+            color: #909090;
+            width: 15px;
         }
     }
 
@@ -84,6 +93,9 @@ export const TakeNoteCatalogueWrapper = styled.div`
                 }
 
                 .new-folder-wapper {
+                    .vsc-new-folder {
+                        color: #7a7a7a;
+                    }
                     &:hover {
                         .vsc-new-folder {
                             color: #FFFFFF;

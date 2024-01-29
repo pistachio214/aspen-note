@@ -4,8 +4,8 @@ import {
     VscChevronRight,
     VscNewFolder,
     VscChevronDown,
-    VscGear
 } from "react-icons/vsc";
+import { AiOutlineCloudSync, AiOutlineSetting } from "react-icons/ai";
 import { v4 as uuidv4 } from "uuid";
 
 import TakeNoteCatalogueTitleComponent from "@/components/TakeNote/Catalogue/TakeNoteCatalogueTitleComponent";
@@ -26,37 +26,30 @@ const TakeNoteCatalogueComponent: React.FC = () => {
         {
             uuid: 'jishutie',
             title: "技术贴",
-
         },
         {
             uuid: 'dog-bone',
             title: "dog bone",
-
         },
         {
             uuid: 'bibeiruanjian',
             title: "必备软件",
-
         },
         {
             uuid: 'poe-luyouqi',
             title: "Poe路由器",
-
         },
         {
             uuid: 'slyours',
             title: "四联优侍",
-
         },
         {
             uuid: 'slyours-jianke',
             title: "健科公司文档",
-
         },
         {
             uuid: 'ruxiaoyi',
             title: "如小意",
-
         },
     ]);
 
@@ -93,8 +86,17 @@ const TakeNoteCatalogueComponent: React.FC = () => {
                 <TakeNoteCatalogueTitleComponent />
 
                 <div className="setting-container">
-                    <div className="setting-icon"><VscGear /></div>
+                    <div className="setting-icon">
+                        <AiOutlineSetting className="vsc-chevron-right" />
+                    </div>
                     <div className="setting-title">Setting</div>
+                </div>
+
+                <div className="setting-container">
+                    <div className="setting-icon">
+                        <AiOutlineCloudSync className="vsc-chevron-right" />
+                    </div>
+                    <div className="setting-title">sync</div>
                 </div>
 
                 <div className="catelogue-container">
