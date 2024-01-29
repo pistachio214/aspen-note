@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { shallowEqual } from "react-redux";
-import { VscChevronRight, VscNewFolder, VscChevronDown } from "react-icons/vsc";
+import {
+    VscChevronRight,
+    VscNewFolder,
+    VscChevronDown,
+    VscGear
+} from "react-icons/vsc";
 import { v4 as uuidv4 } from "uuid";
 
 import TakeNoteCatalogueTitleComponent from "@/components/TakeNote/Catalogue/TakeNoteCatalogueTitleComponent";
@@ -19,37 +24,37 @@ const TakeNoteCatalogueComponent: React.FC = () => {
 
     const [cataItem, setCataItem] = useState<TakeNoteCatalogueMenu[]>([
         {
-            uuid: uuidv4(),
+            uuid: 'jishutie',
             title: "技术贴",
 
         },
         {
-            uuid: uuidv4(),
+            uuid: 'dog-bone',
             title: "dog bone",
 
         },
         {
-            uuid: uuidv4(),
+            uuid: 'bibeiruanjian',
             title: "必备软件",
 
         },
         {
-            uuid: uuidv4(),
+            uuid: 'poe-luyouqi',
             title: "Poe路由器",
 
         },
         {
-            uuid: uuidv4(),
+            uuid: 'slyours',
             title: "四联优侍",
 
         },
         {
-            uuid: uuidv4(),
+            uuid: 'slyours-jianke',
             title: "健科公司文档",
 
         },
         {
-            uuid: uuidv4(),
+            uuid: 'ruxiaoyi',
             title: "如小意",
 
         },
@@ -87,6 +92,11 @@ const TakeNoteCatalogueComponent: React.FC = () => {
             <TakeNoteCatalogueWrapper>
                 <TakeNoteCatalogueTitleComponent />
 
+                <div className="setting-container">
+                    <div className="setting-icon"><VscGear /></div>
+                    <div className="setting-title">Setting</div>
+                </div>
+
                 <div className="catelogue-container">
                     <div className="container-wapper">
                         <div className="title-container">
@@ -96,12 +106,13 @@ const TakeNoteCatalogueComponent: React.FC = () => {
                                         <VscChevronDown className="vsc-chevron-right" />
                                         :
                                         <VscChevronRight className="vsc-chevron-right" />
-
                                 }
                                 <span>CATEGORIES</span>
                             </div>
 
-                            <div className="wapper new-folder-wapper" onClick={handleAddItem}> <VscNewFolder className="vsc-new-folder" /> </div>
+                            <div className="wapper new-folder-wapper" onClick={handleAddItem}>
+                                <VscNewFolder className="vsc-new-folder" />
+                            </div>
                         </div>
                     </div>
                 </div>

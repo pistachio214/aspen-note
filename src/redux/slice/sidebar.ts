@@ -37,6 +37,9 @@ export const sidebarSlice = createSlice({
         setFirstSidebarKey: (state: SidebarState, action: PayloadAction<string>) => {
             state.firstSidebarKey = action.payload;
         },
+        setSecondSidebarKey: (state: SidebarState, action: PayloadAction<string>) => {
+            state.secondSidebarKey = action.payload;
+        },
     },
 });
 
@@ -47,7 +50,8 @@ export const {
     closeSecond,
     openAll,
     closeAll,
-    setFirstSidebarKey
+    setFirstSidebarKey,
+    setSecondSidebarKey
 } = sidebarSlice.actions;
 export default sidebarSlice.reducer;
 

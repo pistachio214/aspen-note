@@ -17,7 +17,7 @@ const TakeNoteCatalogueEditComponent: React.FC<IProps> = (props: IProps) => {
         }
     }
 
-    const onBlur = (e: FocusEvent) => {
+    const onBlur = (_: FocusEvent) => {
         if (value != undefined && value != null && value != '') {
             props.onEnter(value);
         } else {

@@ -17,6 +17,33 @@ export const TakeNoteCatalogueWrapper = styled.div`
     display: flex;
     flex-direction: column;
 
+    .setting-container {
+        padding: 0 0.75rem;
+        margin-bottom: 0.5rem;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        cursor: default;
+
+        &:hover {
+            background: #3a3a3a;
+            color: white;
+        }
+
+        .setting-icon,.setting-title {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .setting-title {
+            padding-left: 0.5rem;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+        }
+    }
+
     .catelogue-container {
         display: flex;
         flex-direction: column;
@@ -232,6 +259,45 @@ export const TakeNoteMenuWrapper = styled.div`
 
     display: flex;
     flex-direction: column;
+
+    .footer-wrapper {
+        position: fixed;
+        bottom: 0;
+        width: 300px;
+        height: 40px;
+        border-top: 1px solid #d8d8d8;
+        background-color: #e5e5e5;
+        z-index: 999;
+
+        .fotter-tool-wrapper {
+            width: 100vw;
+            height: 100%;
+            margin-left: 1rem;
+
+            display: flex;
+            flex-direction: row;
+            column-gap: 5px;
+
+            .tool-wrapper {
+                width: 40px;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #d8d8d8;
+                    color: #404040;
+                }
+
+                .tool-icon {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+    }
 `
 
 export const TakeNoteSearchWrapper = styled.div`
@@ -265,7 +331,7 @@ export const TakeNoteSearchWrapper = styled.div`
     .search-input {
         padding: 0 1rem;
         height: 30px;
-        width: 200px;
+        width: 245px;
         font-size: 14px;
         outline: none;
     }
@@ -275,7 +341,7 @@ export const TakeNoteMenuItemWrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     overflow-y: auto; /* 设置垂直滚动条 */
 
     .item {
@@ -325,7 +391,7 @@ export const TakeNoteContentWrapper = styled.div`
     }
 
     .preview-wrapper {
-        padding: 20px 40px 40px 40px;
+        padding: 0 40px 40px 40px;
     }
 
     .footer-wrapper {

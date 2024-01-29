@@ -56,17 +56,25 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+/* button:hover { */
   /* border-color: #396cd8; */
-}
+/* } */
+
 button:active {
   /* border-color: #396cd8; */
   background-color: #e8e8e8;
 }
 
 .catalogue-item-active {
-  background: #202020;
+  background-color: #202020 !important;
   color: white;
+  pointer-events: none;
+}
+
+.menu-item-active {
+  background-color: #5183f5 !important;
+  color: white;
+  pointer-events: none;
 }
 
 /* @media (prefers-color-scheme: dark) {
