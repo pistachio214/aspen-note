@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { shallowEqual } from "react-redux";
 import {
     VscChevronRight,
@@ -55,6 +55,10 @@ const TakeNoteCatalogueComponent: React.FC = () => {
 
     const [triggerSubMenu, setTriggerSubMenu] = useState<boolean>(true);
     const [addItem, setAddItem] = useState<boolean>(false);
+
+    useEffect(() => {
+        console.log('进入后就去找本地缓存');
+    }, []);
 
     const triggerSubOnClick = () => {
         setTriggerSubMenu(!triggerSubMenu);
