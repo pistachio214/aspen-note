@@ -99,10 +99,10 @@ const TakeNoteCatalogueComponent: React.FC = () => {
                     <div className="setting-title">sync</div>
                 </div>
 
-                <div className="catelogue-container">
-                    <div className="container-wapper">
+                <div className="catalogue-container">
+                    <div className="container-wrapper">
                         <div className="title-container">
-                            <div className="wapper title-wapper" onClick={triggerSubOnClick}>
+                            <div className="wrapper title-wrapper" onClick={triggerSubOnClick}>
                                 {
                                     triggerSubMenu ?
                                         <VscChevronDown className="vsc-chevron-right" />
@@ -112,14 +112,14 @@ const TakeNoteCatalogueComponent: React.FC = () => {
                                 <span>CATEGORIES</span>
                             </div>
 
-                            <div className="wapper new-folder-wapper" onClick={handleAddItem}>
+                            <div className="wrapper new-folder-wrapper" onClick={handleAddItem}>
                                 <VscNewFolder className="vsc-new-folder" />
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="catelogue-item-container">
+                <div className="catalogue-item-container">
                     {
                         triggerSubMenu ?
                             cataItem.map((item: TakeNoteCatalogueMenu, index: number) => {

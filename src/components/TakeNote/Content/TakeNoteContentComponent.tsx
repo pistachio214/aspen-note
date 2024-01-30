@@ -102,7 +102,7 @@ const TakeNoteContentComponent: React.FC = () => {
             {/* fixed safari浏览器中 fixed布局造成的width不自适应的问题 (https://www.cnblogs.com/savokiss/p/9486240.html) */}
             <div style={{ width: '100%', overflow: 'hidden', position: 'relative' }}>
                 <div className="footer-wrapper">
-                    <div className="fotter-tool-wrapper">
+                    <div className="footer-tool-wrapper">
                         {
                             sidebarState.secondSidebar ? (
                                 <div className="tool-wrapper" onClick={recycleMenu}>

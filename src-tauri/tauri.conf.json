@@ -6,8 +6,8 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "tauri-notion",
-    "version": "0.0.0"
+    "productName": "AspenNotion",
+    "version": "0.0.1"
   },
   "tauri": {
     "allowlist": {
@@ -37,7 +37,7 @@
         "fullscreen": false,
         "resizable": true,
         "title": "Aspen Notion",
-        "width": 1000,
+        "width": 1100,
         "height": 600,
         "center": true
       }

@@ -16,8 +16,7 @@ import { setFirstSidebarKey } from "@/redux/slice/sidebar";
 
 
 import { TakeNoteCatalogueItemWrapper } from "@/components/TakeNote/style";
-import { TakeNoteCataLogueItemProps as IProps } from "@/components/TakeNote/type";
-
+import { TakeNoteCatalogueItemProps as IProps } from "@/components/TakeNote/type";
 
 const TakeNoteCatalogueItemComponent: React.FC<IProps> = (props: IProps) => {
 
@@ -51,7 +50,7 @@ const TakeNoteCatalogueItemComponent: React.FC<IProps> = (props: IProps) => {
             options={options}
         >
             <TakeNoteCatalogueItemWrapper onClick={handleCatalogue} className={sidebarState.firstSidebarKey == props.uuid ? 'catalogue-item-active' : ''}>
-                <div className="item-icon-title-wapper">
+                <div className="item-icon-title-wrapper">
                     <div className="item-icon">
                         {
                             sidebarState.firstSidebarKey == props.uuid ? (

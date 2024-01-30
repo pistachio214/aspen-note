@@ -41,7 +41,7 @@ const TakeNoteMenuComponent: React.FC = () => {
             <TakeNoteMenuItemComponent />
             
             <div className="footer-wrapper">
-                <div className="fotter-tool-wrapper">
+                <div className="footer-tool-wrapper">
                     <div className="tool-wrapper">
                         {
                             sidebarState.firstSidebar ? (

@@ -1,4 +1,4 @@
-interface TakeNoteCataLogueItemProps {
+interface TakeNoteCatalogueItemProps {
     uuid: string
     name: string
 }
@@ -22,7 +22,7 @@ interface TakeNoteItem {
 }
 
 export type {
-    TakeNoteCataLogueItemProps,
+    TakeNoteCatalogueItemProps,
     TakeNoteCatalogueEditProps,
     TakeNoteCatalogueMenu,
     TakeNoteItem,

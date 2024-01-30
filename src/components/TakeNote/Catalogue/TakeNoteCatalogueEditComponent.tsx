@@ -28,7 +28,7 @@ const TakeNoteCatalogueEditComponent: React.FC<IProps> = (props: IProps) => {
 
     return (
         <TakeNoteCatalogueEditInputWrapper>
-            <div className="item-icon-title-wapper">
+            <div className="item-icon-title-wrapper">
                 <div className="item-icon"><AiOutlineFolder /></div>
                 <div className="item-input">
                     <input
