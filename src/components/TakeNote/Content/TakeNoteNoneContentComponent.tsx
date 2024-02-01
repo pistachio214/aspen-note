@@ -9,7 +9,7 @@ const TakeNoteNoneContentComponent: React.FC = () => {
         <TakeNoteNoneContentWrapper>
             <div className="container">
                 <img src={logo} className="logo-img" />
-                Welcome to Pistachio Note 👏👏👏👏
+                Welcome to Pistachio Note 👏👏
             </div>
         </TakeNoteNoneContentWrapper>
     )

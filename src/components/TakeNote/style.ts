@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import logo from '@/assets/logo.svg';
-
 export const TakeNoteWrapper = styled.div`
     display: flex;
     flex-direction: row;
