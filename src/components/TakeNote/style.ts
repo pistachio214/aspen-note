@@ -484,6 +484,10 @@ export const TakeNoteNoneContentWrapper = styled.div`
         align-items: center;
         flex-direction: column;
 
+        color: #7A7A7A;
+        font-weight: bold;
+        font-size: 16px;
+
         .logo-img {
             width: 260px;
             margin-bottom: 15px;
