@@ -28,7 +28,6 @@ const TakeNoteComponent: React.FC = () => {
             }
             <TakeNoteContentComponent />
         </TakeNoteWrapper>
-
     );
 }
 

@@ -20,8 +20,8 @@ export const TakeNoteCatalogueWrapper = styled.div`
 
     .setting-container {
         padding: 0 0.75rem;
-        margin-bottom: 0.5rem;
-        height: 40px;
+        /* margin-bottom: 0.5rem; */
+        height: 35px;
         display: flex;
         flex-direction: row;
         cursor: default;
@@ -394,13 +394,38 @@ export const TakeNoteContentWrapper = styled.div`
     flex: 1;
     overflow-y: auto; /* 设置垂直滚动条 */
     background-color: #fafafa;
+    height: 100%;
 
     .content-wrapper {
-        
+        height: 100%;
     }
 
     .preview-wrapper {
-        padding: 0 40px 40px 40px;
+        height: 100%;
+
+        h1:first-child {
+            margin-top: 0 !important;
+        }
+
+        h2:first-child {
+            margin-top: 0 !important;
+        }
+
+        h3:first-child {
+            margin-top: 0 !important;
+        }
+
+        h4:first-child {
+            margin-top: 0 !important;
+        }
+
+        h5:first-child {
+            margin-top: 0 !important;
+        }
+
+        h6:first-child {
+            margin-top: 0 !important;
+        }
     }
 
     .footer-wrapper {

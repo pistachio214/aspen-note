@@ -100,7 +100,7 @@ const TakeNoteCatalogueComponent: React.FC = () => {
                     <div className="setting-icon">
                         <AiOutlineCloudSync className="vsc-chevron-right" />
                     </div>
-                    <div className="setting-title">sync</div>
+                    <div className="setting-title">Sync</div>
                 </div>
 
                 <div className="catalogue-container">

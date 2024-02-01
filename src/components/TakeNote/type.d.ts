@@ -21,9 +21,14 @@ interface TakeNoteItem {
     content: string
 }
 
+interface TakeNotePreviewProps {
+    content: string
+}
+
 export type {
     TakeNoteCatalogueItemProps,
     TakeNoteCatalogueEditProps,
     TakeNoteCatalogueMenu,
     TakeNoteItem,
+    TakeNotePreviewProps
 }
