@@ -17,10 +17,8 @@ import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { SidebarState } from "@/redux/types/sidebar";
 import { RootState } from "@/redux/store";
 import { closeSecond, openSecond } from "@/redux/slice/sidebar";
-import TakeNotePreviewContentComponent from "@/components/TakeNote/Content/TakeNotePreviewContentComponent";
 
 import { TakeNoteContentWrapper } from "@/components/TakeNote/style";
-
 
 const TakeNoteContentComponent: React.FC = () => {
 
@@ -30,7 +28,7 @@ const TakeNoteContentComponent: React.FC = () => {
 
     const editorRef = useRef<MdEditor>(null);
 
-    const [content, setContent] = useState<string>("\n# 大师兄,师傅和二师兄被妖怪抓走啦！\n\n 12312312 \n\n 12312312 \n\n 12312312 \n\n 12312312 \n\n 12312312 \n\n 12312312 ");
+    const [content, setContent] = useState<string>("# 大师兄,师傅和二师兄被妖怪抓走啦！\n\n 12312312 \n\n 12312312 \n\n 12312312 \n\n 12312312 \n\n 12312312 \n\n 12312312");
     const [type, setType] = useState<number>(1);
 
     const mdParser = new MarkdownIt({
@@ -55,15 +53,24 @@ const TakeNoteContentComponent: React.FC = () => {
 
     const handleEditorChange = (data: { text: string, html: string }) => {
         setContent(data.text);
-        console.log('handleEditorChange', data.html, data.text);
     }
 
     const handleEdit = () => {
         setType(2);
+        editorRef.current?.setView({
+            menu: true,
+            md: true,
+            html: true
+        })
     }
 
     const handleShow = () => {
         setType(1);
+        editorRef.current?.setView({
+            menu: false,
+            md: false,
+            html: true
+        })
     }
 
     const recycleMenu = () => {
@@ -82,23 +89,18 @@ const TakeNoteContentComponent: React.FC = () => {
     return (
         <TakeNoteContentWrapper>
             <div className="content-wrapper">
-                {
-                    type == 1 ?
-                        <TakeNotePreviewContentComponent content={content} />
-                        :
-                        <MdEditor
-                            ref={editorRef}
-                            style={{ height: '100%', padding: '0 0 40px 0' }}
-                            renderHTML={(text: string) => renderHTML(text)}
-                            config={{
-                                view: { menu: true, md: true, html: true },
-                                canView: { menu: true, md: true, html: false, fullScreen: false, hideMenu: true, both: true }
-                            }}
-                            htmlClass="custom-html-style"
-                            onChange={handleEditorChange}
-                            placeholder={'输入您的内容！'}
-                        />
-                }
+                <MdEditor
+                    ref={editorRef}
+                    style={{ height: '100%', padding: '0 0 40px 0' }}
+                    renderHTML={(text: string) => renderHTML(text)}
+                    config={{
+                        view: { menu: false, md: false, html: true },
+                        canView: { menu: true, md: true, html: false, fullScreen: false, hideMenu: true, both: true }
+                    }}
+                    htmlClass="preview-wrapper custom-html-style"
+                    onChange={handleEditorChange}
+                    placeholder={'输入您的内容！'}
+                />
             </div>
 
             {/* fixed safari浏览器中 fixed布局造成的width不自适应的问题 (https://www.cnblogs.com/savokiss/p/9486240.html) */}
