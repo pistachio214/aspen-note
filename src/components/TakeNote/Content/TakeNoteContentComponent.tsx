@@ -48,8 +48,20 @@ const TakeNoteContentComponent: React.FC = () => {
     useEffect(() => {
         // editorRef.current?.fullScreen(true);
         editorRef.current?.setText(content)
+        editorRef.current?.onKeyboard({
+            key: 's',
+            keyCode: 83,
+            withKey: ['metaKey'],
+            callback: (e: React.KeyboardEvent<HTMLDivElement>) => {
+                //@ts-ignore
+                handleSaveContent(e.target.value);
+            }
+        })
     })
 
+    const handleSaveContent = (content: string) => {
+        console.log('按键保存=', content);
+    }
 
     const handleEditorChange = (data: { text: string, html: string }) => {
         setContent(data.text);
