@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import logo from '@/assets/logo.svg';
+
 export const TakeNoteWrapper = styled.div`
     display: flex;
     flex-direction: row;
@@ -465,5 +467,26 @@ export const TakeNoteContentWrapper = styled.div`
             }
         }
     }
+`
 
+export const TakeNoteNoneContentWrapper = styled.div`
+    display: flex;
+    flex: 1;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        width: 40%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .logo-img {
+            width: 260px;
+            margin-bottom: 15px;
+        }
+    }
 `

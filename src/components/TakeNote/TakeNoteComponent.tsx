@@ -5,6 +5,7 @@ import { shallowEqual } from "react-redux";
 import TakeNoteCatalogueComponent from "@/components/TakeNote/Catalogue/TakeNoteCatalogueComponent";
 import TakeNoteMenuComponent from "@/components/TakeNote/Menu/TakeNoteMenuComponent";
 import TakeNoteContentComponent from "@/components/TakeNote/Content/TakeNoteContentComponent";
+import TakeNoteNoneContentComponent from "@/components/TakeNote/Content/TakeNoteNoneContentComponent";
 
 import { SidebarState } from "@/redux/types/sidebar";
 import { useAppSelector } from "@/redux/hook";
@@ -26,7 +27,14 @@ const TakeNoteComponent: React.FC = () => {
                     </>
                 ) : null
             }
-            <TakeNoteContentComponent />
+            {
+                sidebarState.secondSidebarKey == undefined || sidebarState.secondSidebarKey == null || sidebarState.secondSidebarKey == '' ? (
+                    <TakeNoteNoneContentComponent />
+                ) : (
+                    <TakeNoteContentComponent />
+                )
+            }
+
         </TakeNoteWrapper>
     );
 }
