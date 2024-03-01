@@ -21,9 +21,24 @@ interface TakeNoteItem {
     content: string
 }
 
+interface TakeNoteSettingProps {
+    isOpen: boolean
+    onAfterOpen: () => void
+    onRequestClose: () => void
+    onClose: () => void
+}
+
+interface TakeGitBaseic {
+    owner: string
+    repo: string
+    authorization: string
+}
+
 export type {
     TakeNoteCatalogueItemProps,
     TakeNoteCatalogueEditProps,
     TakeNoteCatalogueMenu,
     TakeNoteItem,
+    TakeNoteSettingProps,
+    TakeGitBaseic
 }

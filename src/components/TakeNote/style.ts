@@ -8,8 +8,7 @@ export const TakeNoteWrapper = styled.div`
 
 export const TakeNoteCatalogueWrapper = styled.div`
     height: 100%;
-    min-width: 200px;
-    max-width: 240px;
+    width: 230px;
 
     color: #d0d0d0;
     background-color: #2d2d2d;
@@ -223,7 +222,7 @@ export const TakeNoteCatalogueEditInputWrapper = styled.div`
             input {
                 padding: 0 10px 0 0;
                 height: 25px;
-                width: 80%;
+                width: 150px;
                 caret-color: white;
                 color: white;
                 background-color: transparent;
@@ -277,7 +276,7 @@ export const TakeNoteMenuWrapper = styled.div`
         height: 40px;
         border-top: 1px solid #d8d8d8;
         background-color: #e5e5e5;
-        z-index: 999;
+        /* z-index: 2; */
 
         .footer-tool-wrapper {
             width: 100vw;
@@ -431,7 +430,7 @@ export const TakeNoteContentWrapper = styled.div`
     .footer-wrapper {
         position: fixed;
         bottom: 0;
-        z-index: 999;
+        /* z-index: 999; */
         width: 100vw;
         height: 40px;
         border-top: 1px solid #d8d8d8;
@@ -489,6 +488,126 @@ export const TakeNoteNoneContentWrapper = styled.div`
         .logo-img {
             width: 260px;
             margin-bottom: 15px;
+        }
+    }
+`
+
+export const TakeNoteSettingModalWrapper = styled.div`
+    width: 40vw;
+    
+    h2 {
+        margin-top: 0;
+    }
+
+    .form-container {
+        margin-top: 50px;
+        flex: 1;
+
+        .form-item {
+            flex: 1;
+            padding-right: 50px;
+            padding-left: 50px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            
+            .item-label {
+                width: 120px;
+            }
+
+            .item-content {
+                flex: 1;
+                /* width: 65%; */
+            }
+
+            input {
+                width: 100%;
+                height: 10px;
+                border-radius: 0;
+                padding-left: .2em;
+                
+                outline: none;
+                border: none;
+                border-bottom: 1px solid #a8a8a8;
+                box-shadow: none;
+
+                color: #555;
+
+                &:focus {
+                    border: none;
+                    border-bottom: 1px solid #a8a8a8;
+                }
+
+                &::-webkit-input-placeholder {
+                    /* WebKit browsers，webkit内核浏览器 */
+                    color: #cdcdcd;
+                    font-size: 13px;
+                }
+
+                &:-ms-input-placeholder {
+                    /* Internet Explorer 10+ */ 
+                    color: #cdcdcd;
+                    font-size: 13px;
+                }
+
+                &:-moz-placeholder {
+                    /* Mozilla Firefox 4 to 18 */ 
+                    color: #cdcdcd;
+                    font-size: 13px;
+                }
+
+                &::-moz-placeholder {
+                    /* Mozilla Firefox 19+ */ 
+                    color: #cdcdcd;
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .form-footer {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            gap: 10px;
+
+            button {
+                margin-left: 5px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* margin-right: 5px; */
+                font-size: 14px;
+
+            }
+
+            .default {
+                color: #606266;
+                border-color: #dcdfe6;
+                background-color: #fff;
+                border: 1px solid #dcdfe6;
+                outline: none;
+
+                &:focus, &:hover {
+                    color: #409eff;
+                    border-color: #c6e2ff;
+                    background-color: #ecf5ff;
+                }
+            }
+
+            .primary {
+                color: #fff;
+                background-color: #409eff;
+                border-color: #409eff;
+
+                &:focus, &:hover {
+                    background: #66b1ff;
+                    border-color: #66b1ff;
+                    color: #fff;
+                }
+            }
         }
     }
 `

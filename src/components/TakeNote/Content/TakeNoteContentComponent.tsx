@@ -7,8 +7,11 @@ import 'react-markdown-editor-lite/lib/index.css';
 import MarkdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/intellij-light.min.css';
+
+// import 'highlight.js/styles/intellij-light.min.css';
 // import 'highlight.js/styles/atom-one-light.css';
+// import 'highlight.js/styles/default.css';
+import 'highlight.js/styles/routeros.css';
 
 import { VscSync, VscTrash } from "react-icons/vsc";
 import { TiEdit, TiEye, TiChevronLeft, TiChevronRight } from "react-icons/ti";

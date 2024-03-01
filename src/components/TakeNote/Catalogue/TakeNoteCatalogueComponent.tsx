@@ -8,15 +8,18 @@ import {
 import { AiOutlineCloudSync, AiOutlineSetting } from "react-icons/ai";
 import { v4 as uuidv4 } from "uuid";
 
+
 import TakeNoteCatalogueTitleComponent from "@/components/TakeNote/Catalogue/TakeNoteCatalogueTitleComponent";
 import TakeNoteCatalogueItemComponent from "@/components/TakeNote/Catalogue/TakeNoteCatalogueItemComponent";
 import TakeNoteCatalogueEditComponent from "@/components/TakeNote/Catalogue/TakeNoteCatalogueEditComponent";
+import TakeNoteSettingModal from "@/components/TakeNote/Catalogue/TakeNoteSettingModal";
 import { RootState } from '@/redux/store';
 import { SidebarState } from "@/redux/types/sidebar";
 import { useAppSelector } from "@/redux/hook";
 
 import { TakeNoteCatalogueWrapper } from "@/components/TakeNote/style";
 import { TakeNoteCatalogueMenu } from "@/components/TakeNote/type";
+
 
 const TakeNoteCatalogueComponent: React.FC = () => {
 
@@ -55,6 +58,7 @@ const TakeNoteCatalogueComponent: React.FC = () => {
 
     const [triggerSubMenu, setTriggerSubMenu] = useState<boolean>(true);
     const [addItem, setAddItem] = useState<boolean>(false);
+    const [isSettingOpen, setIsSettingOpen] = useState<boolean>(false);
 
     useEffect(() => {
         console.log('进入后就去找本地缓存');
@@ -84,12 +88,19 @@ const TakeNoteCatalogueComponent: React.FC = () => {
         setAddItem(false);
     }
 
+    /**
+     * 打开设置弹出层
+     */
+    const openSettingModal = () => {
+        setIsSettingOpen(true);
+    }
+
     return sidebarState.firstSidebar ?
         (
             <TakeNoteCatalogueWrapper>
                 <TakeNoteCatalogueTitleComponent />
 
-                <div className="setting-container">
+                <div className="setting-container" onClick={openSettingModal}>
                     <div className="setting-icon">
                         <AiOutlineSetting className="vsc-chevron-right" />
                     </div>
@@ -148,6 +159,14 @@ const TakeNoteCatalogueComponent: React.FC = () => {
                     }
 
                 </div>
+
+                <TakeNoteSettingModal
+                    isOpen={isSettingOpen}
+                    onAfterOpen={() => console.log('after open')}
+                    onRequestClose={() => console.log('request close')}
+                    onClose={() => setIsSettingOpen(false)}
+
+                />
             </TakeNoteCatalogueWrapper>
         )
         :
